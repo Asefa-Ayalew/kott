@@ -1,8 +1,16 @@
 {
   "extends": "@repo/typescript-config/react-library.json",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["../../apps/*", "../../packages/*"]
+    }
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "../../apps/web/app/(features)/shared/theme",
+    "../../global.d.ts" // Reference the global declaration file
+  ],
   "exclude": ["node_modules", "dist"]
 }
